@@ -1,0 +1,22 @@
+{
+    "version": "0.2",
+    "ignorePaths": [],
+    "dictionaryDefinitions": [],
+    "dictionaries": [],
+    "words": [
+        "Antimalware",
+        "azurerm",
+        "cdktf",
+        "ckdtf",
+        "identityfile",
+        "infracost",
+        "lcov",
+        "linebreak",
+        "Oidc",
+        "Provisoner",
+        "templatefile",
+        "unmocked"
+    ],
+    "ignoreWords": [],
+    "import": []
+}
