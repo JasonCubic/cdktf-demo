@@ -102,7 +102,7 @@ Some advice I heard on a podcast to make the cdktf as beneficial as possible is 
 
 ---
 
-cdktf commands:
+## cdktf commands
 
 - `cdktf --version` - get the version
 - `cdktf --help` - get help with most commands and see what options are available
@@ -121,3 +121,40 @@ Terraform commands that cdktf can also do (you could use normal terraform instea
 - `cdktf plan` - does a synth and then a play on it to see what changes will be made when an apply is done
 - `ckdtf apply` - does a synth and they a terraform apply on it
 - `ckdtf destroy` - does a synth and a terraform destroy on it
+
+---
+
+## How to install the Terraform CDK CLI tool
+
+Prerequisites:
+
+- [Terraform CLI](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
+- [Nodejs](https://nodejs.org/en/)
+
+Install Instrucstions:
+
+- You can then install CDKTF from the command line: `npm install --global cdktf-cli`
+- To verify it is installed run: `cdktf --help` and/or `cdktf --version`
+
+More info here: <https://developer.hashicorp.com/terraform/tutorials/cdktf/cdktf-install>
+
+---
+
+## How to update Terraform CDK
+
+- To see if you have any outdated npm globally installed packages: `npm outdated -g --depth=0`
+- To update CDKTF if it outdated: `npm update -g cdktf-cli`
+
+note:
+
+- You can check to see what version you have by running: `cdktf --version`
+- You can see what version is the latest here: <https://www.npmjs.com/package/cdktf-cli?activeTab=versions>
+
+---
+
+## how the ssh keypair that is used in this demo was made
+
+1. `ssh-keygen -t rsa`
+2. save to `C:\Users\<your home account>\.ssh\mtcazurekey`
+3. skipped passphrase
+4. to verify the files `mtcazurekey` and `mtcazurekey.pub` were created, run: `ls -al ~/.ssh`
