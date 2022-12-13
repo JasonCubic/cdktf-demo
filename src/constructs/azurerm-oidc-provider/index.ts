@@ -3,7 +3,8 @@ import { Construct } from 'constructs';
 
 import { provider } from '@cdktf/provider-azurerm';
 
-// forces the use of OIDC
+// All of the classes and types are available in @cdktf/provider-azurerm
+// this modifies the AzurermProviderConfig type to require that OIDC be set to true
 interface AzurermOidcProviderConfig extends AzurermProviderConfig { useOidc: true }
 
 class AzurermOidcProvider extends Construct {

@@ -1,5 +1,5 @@
 {
-  "name": "cdktf_az_hub_spoke",
+  "name": "cdktf_demo",
   "version": "1.0.0",
   "main": "src/main.ts",
   "types": "src/main.ts",

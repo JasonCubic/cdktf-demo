@@ -12,15 +12,15 @@ function testFileAccess(filePath: string): Promise<void> {
   });
 }
 
+// helper function that returns a boolean if a file exists rather than throwing an exception
 async function fileExists(filePath: string): Promise<boolean> {
-  let result: boolean = false;
   try {
     await testFileAccess(filePath);
-    result = true;
+    return true;
   } catch (error) {
     // console.debug('fileExists error: ', error);
   }
-  return result;
+  return false;
 }
 
 export default fileExists;

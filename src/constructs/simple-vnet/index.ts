@@ -1,4 +1,3 @@
-// import { AzurermProviderConfig } from '@cdktf/provider-azurerm/lib/provider/index.js';
 import { Construct } from 'constructs';
 import { ResourceGroup } from '@cdktf/provider-azurerm/lib/resource-group/index.js';
 import { VirtualNetwork } from '@cdktf/provider-azurerm/lib/virtual-network/index.js';

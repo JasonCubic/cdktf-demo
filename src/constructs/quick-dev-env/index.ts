@@ -1,7 +1,13 @@
 import { Construct } from 'constructs';
+
+// ResourceGroup is a CDKTF provider resource.
+// - Typescript linter will tell you if you have typing based misconfiguration
+// - You can look through the options in the node_modules folders
+// - In vsCode you can goto the definition to see the type definition
 import { ResourceGroup } from '@cdktf/provider-azurerm/lib/resource-group/index.js';
 
-// this quick dev environment construct is made up of these two constructs
+// Constructs are like lego's. A construct can be collection of a bunch of other constructs.
+// this quick dev environment construct is made up of these two other constructs
 import SimpleVNet from '../simple-vnet/index.js';
 import SimpleLinuxVm from '../simple-linux-vm/index.js';
 

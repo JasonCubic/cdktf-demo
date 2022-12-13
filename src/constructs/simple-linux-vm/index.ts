@@ -30,6 +30,7 @@ class SimpleLinuxVm extends Construct {
     this.rg = options.resourceGroup;
     this.tags = options.tags;
 
+    // when this construct gets called it creates a simple linux VM
     this.linuxVm = new LinuxVirtualMachine(this, 'mtc-vm', {
       adminSshKey: [
         {
@@ -57,6 +58,7 @@ class SimpleLinuxVm extends Construct {
     });
   }
 
+  // this method can be called later if a public IP is needed
   addNicWithPublicIp(pip: PublicIp, subnet: Subnet) {
     this.nic = new NetworkInterface(this, 'mtc-nic', {
       ipConfiguration: [
@@ -77,8 +79,11 @@ class SimpleLinuxVm extends Construct {
     this.linuxVm.networkInterfaceIds = [this.nic.id];
   }
 
+  // we probably wouldn't use provisioners, but this is just showing that anything terraform can do CDKTF can be used to configure
   addVsCodeRemoteProvisoner(user: string, identityfile: string) {
     const addPublicIpToVsCodeRemoteAsset = new TerraformAsset(this, 'add-public-ip-to-vs-code-remote-asset', {
+      // typescript in nodejs normally ignore non typescript files.  Using copyfile package in the build pipeline to sync .template files
+      // here is an example of using runtime arguments for the conditional
       path: path.resolve(currentDir(import.meta.url), `${process.platform === 'win32' ? 'windows' : 'linux'}-ssh-script.template`),
     });
 
@@ -98,6 +103,7 @@ class SimpleLinuxVm extends Construct {
     ];
   }
 
+  // This shows up as a Terraform Output.
   outputPublicIpData(pip: PublicIp) {
     const dataAzurermPublicIpLinuxVmData = new DataAzurermPublicIp(this, 'mtc-ip-data', {
       dependsOn: [this.linuxVm],
@@ -110,6 +116,7 @@ class SimpleLinuxVm extends Construct {
     });
   }
 
+  // a method is a nice way to group resources with similar concerns
   addDockerExtension() {
     // https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/virtual_machine_extension
     // az vm extension image list --location eastus -o table

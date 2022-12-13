@@ -1,5 +1,5 @@
 import { Construct } from 'constructs';
-import { App, TerraformStack, TerraformVariable } from 'cdktf';
+import { TerraformStack, TerraformVariable } from 'cdktf';
 
 import AzureOidcProvider from '../../constructs/azurerm-oidc-provider/index.js';
 import QuickDevEnv from '../../constructs/quick-dev-env/index.js';
@@ -27,8 +27,8 @@ class MyStack extends TerraformStack {
       features: {},
     });
 
-    new QuickDevEnv(this, 'quick-dev-env', 'eastus');
+    new QuickDevEnv(this, 'quick-dev-env', 'East US');
   }
 }
 
-export default (app: App, stackName: string) => new MyStack(app, stackName);
+export default MyStack;
