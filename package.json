@@ -16,22 +16,18 @@
     "apply": "env-cmd cdktf apply --auto-approve",
     "destroy": "env-cmd cdktf destroy --auto-approve",
     "compile": "tsc --pretty",
-    "watch": "tsc --watch",
-    "nodemon-help": "nodemon --help",
-    "help": "tsc -w --help",
+    "watch": "npm run dev",
     "test": "jest",
     "test:watch": "jest --watch",
-    "upgrade": "npm i cdktf@latest cdktf-cli@latest",
-    "upgrade:next": "npm i cdktf@next cdktf-cli@next",
     "infracost": "cdktf synth && infracost breakdown --path ./cdktf.out"
   },
   "engines": {
     "node": ">=14.0"
   },
   "dependencies": {
-    "@cdktf/provider-azurerm": "4.0.2",
-    "cdktf": "^0.14.2",
-    "constructs": "^10.1.181"
+    "@cdktf/provider-azurerm": "4.0.6",
+    "cdktf": "^0.14.3",
+    "constructs": "^10.1.215"
   },
   "devDependencies": {
     "@types/jest": "^29.2.3",
@@ -46,7 +42,7 @@
     "rimraf": "^3.0.2",
     "ts-jest": "^29.0.3",
     "ts-node": "^10.9.1",
-    "tsc-watch": "^5.0.3",
+    "tsc-watch": "^6.0.0",
     "typescript": "^4.9.3"
   }
 }

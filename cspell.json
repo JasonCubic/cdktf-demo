@@ -8,6 +8,7 @@
         "azurerm",
         "cdktf",
         "ckdtf",
+        "copyfiles",
         "identityfile",
         "infracost",
         "lcov",
