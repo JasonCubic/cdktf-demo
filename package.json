@@ -1,13 +1,13 @@
 {
   "name": "cdktf_demo",
   "version": "1.0.0",
-  "main": "src/main.ts",
-  "types": "src/main.ts",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
   "type": "module",
   "license": "MPL-2.0",
   "private": true,
   "scripts": {
-    "dev": "rimraf dist && npm run copy-files && env-cmd tsc-watch --project . --outDir ./dist --onSuccess \"nodemon --watch 'dist' ./dist/main.js\"",
+    "dev": "rimraf dist && npm run copy-files && env-cmd tsc-watch --project . --outDir ./dist --onSuccess \"nodemon --watch 'dist' ./dist/index.js\"",
     "get": "cdktf get",
     "copy-files": "copyfiles -u 1 src/**/*.template src/**/*.sh dist/",
     "build": "rimraf dist && tsc && npm run copy-files",
